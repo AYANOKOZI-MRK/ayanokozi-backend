@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TON Miner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://libtl.com/sdk.js" data-zone="1107410707" data-sdk="show_1107410707"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h2>TON Miner <span class="verify">✔</span></h2>
+        <p id="username">Welcome User</p>
+      </div>
+      <button class="wallet-btn" onclick="showPage('wallet')">Wallet</button>
+    </header>
+
+    <section class="balance-card">
+      <p>Your mining system</p>
+      <h1><span id="balance">0.00000000</span> TON</h1>
+      <div class="ring">
+        <div class="circle">
+          <span id="liveMine">0.00000000</span>
+          <b>TON</b>
+        </div>
+      </div>
+      <p class="speed"><span id="power">15</span> GH/s</p>
+      <button onclick="claim()">＋ Claim</button>
+    </section>
+
+    <section class="grid">
+      <div class="box"><b id="ads">0</b><span>Ads</span></div>
+      <div class="box"><b id="refs">0</b><span>Referrals</span></div>
+      <div class="box"><b id="mined">0</b><span>Mined</span></div>
+    </section>
+
+    <section class="card">
+      <h3>Watch & Earn</h3>
+      <p>Ad দেখে TON reward নিন</p>
+      <button onclick="watchAd()">▶ Watch Ad</button>
+      <p id="msg"></p>
+    </section>
+
+    <section class="card">
+      <h3>Daily Tasks</h3>
+      <div class="task">
+        <span>Join Channel<br><small>+0.00001 TON</small></span>
+        <button onclick="taskReward()">GO</button>
+      </div>
+      <div class="task">
+        <span>Watch Ad<br><small>+0.00001 TON</small></span>
+        <button onclick="watchAd()">GO</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Referral & Contact</h3>
+      <p>বন্ধুকে invite করে bonus নিন</p>
+      <button onclick="copyReferral()">🔗 Copy Referral Link</button>
+      <div class="share-grid">
+        <button onclick="shareFB()">📘 Facebook</button>
+        <button onclick="shareWhatsApp()">💬 WhatsApp</button>
+      </div>
+    </section>
+
+    <section id="walletPage" class="page">
+      <h2>Wallet</h2>
+      <input id="walletInput" placeholder="TON Wallet Address">
+      <button onclick="saveWallet()">Save Wallet</button>
+
+      <h2>Withdraw</h2>
+      <p>Minimum withdrawal: 0.10 TON</p>
+      <input id="amountInput" type="number" placeholder="Amount TON">
+      <button onclick="withdraw()">Submit Withdraw</button>
+
+      <h2>Withdraw History</h2>
+      <div id="history"></div>
+      <button onclick="showPage('home')">Back Home</button>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
